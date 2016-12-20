@@ -30,7 +30,9 @@ popd
 pushd /home/achald/local/caffe
 ln -s /home/achald/imagenet-randomization-caffe/create_config_dir.py .
 ln -s /home/achald/imagenet-randomization-caffe/train.sh .
+echo 'Created links.'
 
+echo 'Training.'
 export PYTHONPATH="/home/achald/local/caffe/python:${PYTHONPATH}"
 ./train.sh $bitmask
 popd
