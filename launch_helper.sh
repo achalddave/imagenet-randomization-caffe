@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if [[ "$#" != 1 ]] ; then
+    echo "Usage:"
+    echo "./${0} <bitmask>"
+    exit 1
+fi
+
+bitmask=$1
+
 pushd /data/imagenet
 
 rm -rf ilsvrc12_train_lmdb
