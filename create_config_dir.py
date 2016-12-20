@@ -19,6 +19,11 @@ import errno
 import os
 from shutil import copyfile
 
+# Necessary to run Caffe in a headless manner, of course.
+# https://github.com/BVLC/caffe/issues/861#issuecomment-70124809
+import matplotlib
+matplotlib.use('Agg')
+
 from caffe.proto.caffe_pb2 import SolverParameter, NetParameter
 from google.protobuf import text_format
 
