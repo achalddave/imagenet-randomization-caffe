@@ -6,7 +6,7 @@ set -e
 
 if [[ "$#" != 1 ]] ; then
     echo "Usage:"
-    echo "./launch.sh <bitmask>"
+    echo "./${0} <bitmask>"
     exit 1
 fi
 
