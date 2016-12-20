@@ -18,7 +18,13 @@ aws s3 cp s3://imagenet-randomization-results/lmdbs/ilsvrc12_val_lmdb/ ilsvrc12_
 popd
 
 pushd /home/achald
-git clone https://github.com/achalddave/imagenet-randomization-caffe
+if [[ ! -d imagenet-randomization-caffe ]] ; then
+    git clone https://github.com/achalddave/imagenet-randomization-caffe
+else
+    pushd imagenet-randomization-caffe
+    git pull origin master
+    popd
+fi
 popd
 
 pushd /home/achald/local/caffe
